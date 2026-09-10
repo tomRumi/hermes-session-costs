@@ -80,10 +80,15 @@ The catalog's validation gate requires a `plugin.yaml` / `plugin.yml` /
 `plugin.json` at the pinned commit, and runs `hermes plugins validate` against it.
 A repository shipping only `desktop/plugin.js` fails that gate.
 
-Hence the unified package shape: `plugin.yaml` at the repo root (the agent half —
-a manifest that honestly declares nothing) plus `desktop/plugin.js` (the desktop
-half — the whole feature). Hermes installs it as one folder and loads the desktop
-half through its normal renderer pipeline.
+Hence the unified package shape: `plugin.yaml` plus `__init__.py` at the repo
+root (the agent half — a manifest and a `register()` that both declare nothing)
+alongside `desktop/plugin.js` (the desktop half — the whole feature). Hermes
+installs it as one folder and loads the desktop half through its normal renderer
+pipeline.
+
+A manifest alone is not enough: Hermes imports a directory plugin as a module and
+calls `register()` on it, so the folder must be importable. `hermes plugins
+doctor .` reports exactly this (`No __init__.py in …` when it is missing).
 
 One consequence worth knowing: the **desktop half of a unified package is
 opt-in**, so catalog users must enable it in Settings → Plugins after installing.

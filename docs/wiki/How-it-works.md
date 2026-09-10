@@ -10,15 +10,18 @@ with two halves:
 
 ```
 ~/.hermes/plugins/hermes-session-costs/
-├── plugin.yaml          # agent half: the manifest (declares no tools/hooks)
+├── plugin.yaml          # manifest: declares no capabilities
+├── __init__.py          # agent half: registers nothing (see below)
 └── desktop/
     └── plugin.js        # desktop half: the whole feature
 ```
 
-The agent half exists so the package is a valid, installable Hermes plugin and
-so the plugin catalog's validation gate is satisfied. It deliberately declares
-**no** tools, hooks, middleware, or environment variables — the feature is pure
-desktop UI, and declaring anything else would be inaccurate.
+The agent half exists because Hermes requires a directory plugin to be an
+importable module with a `register()` entry point — not because the plugin has
+any agent-side behaviour. It is an explicit no-op that registers **no** tools,
+hooks, middleware, or environment variables, matching what the manifest
+declares. Declaring nothing and registering nothing is the accurate description
+of a pure desktop UI plugin; anything else would be capability creep.
 
 The desktop half is loaded from the regular agent-plugin root
 (`~/.hermes/plugins/<id>/desktop/plugin.js`) through the same renderer pipeline

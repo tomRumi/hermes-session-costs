@@ -6,6 +6,10 @@
 # capability list below is deliberately empty — declaring nothing is the honest
 # declaration for this package, not an omission.
 #
+# The agent half (`__init__.py`) is a deliberate no-op: Hermes requires a
+# directory plugin to be importable with a `register()` entry point, so the
+# module exists to satisfy discovery/validation and registers nothing.
+#
 # Install: `hermes plugins install tomRumi/hermes-session-costs`, then enable
 # the desktop half in the app's Settings -> Plugins (the desktop half of a
 # unified package is opt-in by design).

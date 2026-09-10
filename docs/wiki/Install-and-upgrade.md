@@ -71,7 +71,8 @@ rm -rf ~/.hermes/plugins/hermes-session-costs
 
 ```
 ~/.hermes/plugins/hermes-session-costs/
-├── plugin.yaml          # agent half (manifest)
+├── plugin.yaml          # manifest: declares no capabilities
+├── __init__.py          # agent half: registers nothing
 └── desktop/
     └── plugin.js        # desktop half (the feature)
 ```
