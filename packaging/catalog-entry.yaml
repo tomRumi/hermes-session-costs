@@ -1,0 +1,39 @@
+# Catalog entry TEMPLATE — this is NOT installed or read by anything here.
+#
+# To submit to the Hermes plugin catalog, copy this file to
+#   plugin-catalog/hermes-session-costs.yaml
+# in a fork of NousResearch/hermes-agent and open a PR.
+#
+# BEFORE SUBMITTING you must:
+#   1. Replace `sha` with the full 40-hex commit SHA of the release you want
+#      reviewed (NOT a branch, NOT a tag, NOT a short SHA — the loader rejects
+#      anything but 40 lowercase hex).
+#   2. Make sure that commit is at least 2 WEEKS OLD. The catalog's supply-chain
+#      policy refuses a pin that was pushed moments before review, so tag the
+#      release now and submit the PR ~2 weeks later.
+#   3. Confirm the pinned commit has plugin.yaml at the repo root and passes
+#      `hermes plugins validate` at that commit (the PR's CI re-checks both).
+#
+# Find the commit sha for a tag:
+#   git rev-list -n1 v1.0.0
+#
+# Every future change to the plugin needs a NEW PR bumping this sha.
+
+name: hermes-session-costs
+repo: https://github.com/tomRumi/hermes-session-costs
+sha: 0000000000000000000000000000000000000000  # REPLACE with the 40-hex commit sha
+description: Per-session token usage, cost (USD) and context window in the Hermes desktop status bar, with one-click context compression.
+maintainer: tomRumi
+tier: community
+docs_url: https://github.com/tomRumi/hermes-session-costs/wiki
+platforms: []
+capabilities:
+  # Pure desktop UI: the package registers no tools, hooks, middleware or
+  # environment variables. These empty lists are the accurate declaration —
+  # the catalog's validation gate treats undeclared capability creep as a
+  # security issue, so they must stay empty unless the plugin actually
+  # registers something.
+  provides_tools: []
+  provides_hooks: []
+  provides_middleware: []
+  requires_env: []

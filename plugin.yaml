@@ -1,0 +1,21 @@
+# Hermes Session Costs — agent half (manifest).
+#
+# This plugin is pure DESKTOP UI: the whole feature lives in desktop/plugin.js,
+# a Hermes desktop-app plugin contributing a status-bar chip and a details
+# panel. It registers NO tools, hooks, middleware, or env vars, so every
+# capability list below is deliberately empty — declaring nothing is the honest
+# declaration for this package, not an omission.
+#
+# Install: `hermes plugins install tomRumi/hermes-session-costs`, then enable
+# the desktop half in the app's Settings -> Plugins (the desktop half of a
+# unified package is opt-in by design).
+name: hermes-session-costs
+version: 1.0.0
+manifest_version: 2
+api_version: 1
+description: Per-session token usage, cost (USD) and context window in the Hermes desktop status bar, with one-click context compression.
+author: tomRumi
+license: MIT
+homepage: https://github.com/tomRumi/hermes-session-costs
+tags: [desktop, usage, cost, context, compression, statusbar]
+requires_hermes: ">=0.21"
