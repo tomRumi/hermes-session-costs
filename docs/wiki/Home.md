@@ -14,6 +14,11 @@ desktop status bar, with one-click context compression.
 
 ## The 30-second version
 
+The details panel — context bar, token split, cost with a per-side breakdown,
+and one-click compression:
+
+![Session stats panel](https://github.com/tomRumi/hermes-session-costs/raw/main/docs/img/panel-screenshot.png)
+
 The status bar gets one chip describing **the session you are looking at**:
 
 ```

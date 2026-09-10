@@ -12,6 +12,11 @@ the panel.
 107k tok · 33k/200k (16%) · $0.03
 ```
 
+The details panel (click the chip) — context bar, token split, cost with a
+per-side breakdown, and one-click compression:
+
+![Session stats panel](docs/img/panel-screenshot.png)
+
 ## Install
 
 **One-click (install link):**
