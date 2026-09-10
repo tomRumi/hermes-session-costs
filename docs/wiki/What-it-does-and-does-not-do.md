@@ -2,6 +2,17 @@
 
 A precise capability list — including everything it deliberately does not do.
 
+## Platform status
+
+**Tested on macOS only.** Specifically: Hermes desktop `0.17.1` on macOS
+(Tahoe 26.6.2, arm64).
+
+The plugin uses no macOS-specific API — it is plain ESM JavaScript against the
+Hermes plugin SDK, which ships for Windows and Linux too, so it is *expected*
+to work on the Windows and Linux desktop apps. That is unverified: if you run
+it on Windows or Linux, please [report back](https://github.com/tomRumi/hermes-session-costs/issues)
+so this note can be updated.
+
 ## What it does
 
 ### Status-bar chip

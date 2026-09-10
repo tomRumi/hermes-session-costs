@@ -16,7 +16,8 @@ Work through these in order.
    version, remove `~/.hermes/desktop-plugins/session-stats` — see
    [Install and upgrade](Install-and-upgrade).
 
-4. **Reload plugins.** ⌘K → **Reload desktop plugins**. Note this command only
+4. **Reload plugins.** ⌘K (macOS) / Ctrl+K (Windows, Linux) → **Reload desktop
+   plugins**. Note this command only
    rescans *new* plugin folders; for an already-known plugin that failed to
    load, touch/re-save `desktop/plugin.js` (or reinstall) so the file watcher
    picks it up.
